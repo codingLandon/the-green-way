@@ -20,7 +20,7 @@ export default function Profile(props) {
             <br />
             <Link to="" onClick={handleLogOut}>LOG OUT</Link>
             <br />
-            <button onClick={handleCheckToken}>Check When My Login Expires</button>
+            <Link to="" onClick={handleCheckToken}>Check When My Login Expires</Link>
         </main>
     )
 }
