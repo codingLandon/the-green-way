@@ -10,8 +10,9 @@ module.exports = {
 };
 
 async function update(req, res) {
-  req.body.done = req.body.done === 'on';
-  const product = Product.updateOne(req.params.id, req.body);
+    // console.log(req.body)
+    // console.log(req.params)
+  const product = await Product.findByIdAndUpdate(req.params.id, req.body);
   res.json(product);
 }
 
@@ -21,7 +22,7 @@ async function edit(req, res) {
 }
 
 async function deleteProduct(req, res) {
-  const product = await Product.deleteOne(req.params.id);
+  const product = await Product.deleteOne({_id: req.params.id});
   res.json(product);
 }
 

@@ -11,5 +11,13 @@ export function getById(id) {
 }
 
 export function addProduct(product) {
-  return sendRequest(BASE_URL, "POST", product)
+  return sendRequest(BASE_URL, "POST", product);
+}
+
+export function deleteProduct(id) {
+  return sendRequest(`${BASE_URL}/${id}`, "DELETE");
+}
+
+export function updateProduct(id, product) {
+  return sendRequest(`${BASE_URL}/${id}`, "PUT", product);
 }
